@@ -1,0 +1,140 @@
+
+Monolithic Architecture
+-----------------------
+
+- Unified Unit
+- single large computing unit with single code base that couples all of the business concerns
+- to update even a small changes in the monolithic application, it requires entire stack to be deployed 
+- time consuming
+
+
+
+client browser
+
+services
+
+payment service
+shopping cart       - single instance
+Order service
+
+
+Benefits
+---------
+
+1. Easy deployment-> one executable file or directory
+2. Development-> one code base
+3. Performance-> Centralized code base and repository. one API performs same function
+4. Testing -> simplifies the testing single,centralized unit and end to end testing can be performed faster
+5. Debugging-> one code base
+
+
+Disadvantage
+------------
+Single point of Failure
+Delivery delay
+Tightly Couple Architecture
+Scalability-> Scaling individual components
+Reliabilty-> Error in one module will affect the entire application
+Adapting to new technolgy-> expensive and time consuming
+lack of flexibility- we cannot change the existing technology used in this application
+Redeployment-> small change in application requires redeployment of entire application
+
+
+
+
+
+Microservices
+-------------
+
+- independent deployable Unit
+- Change in one unit will not affect other unit
+- Error in one unit will not affect entire application
+- Each unit(service) will have its own business logic and DB based on the goal
+- Tesing, deploying and scaling occur within each service
+- independent code base because of decoupled business requirement
+- makes error to spot easily and fix it at the earliest as each process are functioning independently
+
+
+Advantages
+----------
+Flexible Scaling-> we can create large instances
+Loosely Coupled Architecture-> independent deployable unit
+Agility-> small team that deploy frequently
+Continuous Deployment-> faster release cycle
+Highly maintainable and testable code-> testing new features
+Technical Flexibility-> freedom to use your tool which ever you desire or familar
+High Reliabilty-> change in one application will not affect other
+
+
+Disadvantage
+------------
+Different locations of Development team-> it has to be managed properly, it leads to slower development
+and poor operational performance
+
+Infrastructure cost-> due to introduction of new team, management have to invest in new tools
+
+Communcation Overhead-> collaboration to coordinate updates and interface
+
+Debugging challanges- we have diffrent logs for each microservices
+
+lact of standardization-> different languages
+
+lack of clear ownership-> because number of services running by differnt teams
+
+
+Microservices Patterns
+
+API Gateway
+Service Discovery
+
+..
+..
+
+
+                   Spring                 Spring Boot
+			   
+ Configuration  XML or Java                Annotation and auto configuration
+ Server         manually install           Embeded Tomcat(default), Undertow, Jetty
+                server
+ setup          Manual Setup                Quick setup
+ 
+ Complexity     More complex                Faster and very less configuration
+ 
+ App. Structure  WAR or EAR                  JAR or WAR
+ 
+ Features        AOP and metrics             Acutator, health checks
+ 
+ Microservice
+ support         Spring Cloud                Via Spring Cloud
+ 
+ Development      slower development          Faster Development
+ 
+ 
+ 
+ Inversion of Control(IOC)
+ 
+ Spring will create object for the class you create, no need to manually create
+ 
+ 1. Spring loads classes
+ 2. Maintain Spring Bean Factory(will have all the objects created by Spring)
+ 
+ 
+ 
+ class Customer{
+ 
+ }
+
+Customer cust1;
+
+bean will be created with the name lower case of the class name
+
+
+arunkumar.ravichandran2@sky.uk
+
+
+
+
+
+
+
+
